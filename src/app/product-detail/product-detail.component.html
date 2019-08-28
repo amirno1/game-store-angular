@@ -1,0 +1,12 @@
+<div class="details-card-wrapper">
+  <div class="details-card">
+    <div>
+      <h1>{{ product.name }}</h1>
+      <h2>{{ product.genre }}</h2>
+      <h2>{{ product.price | currency }}</h2>
+      <h4>{{ product.description }}</h4>
+    </div>
+    <div><img class="details-image" src="{{ product.image }}" /></div>
+  </div>
+  <button (click)="buy(product)" class="detail-card-buy">Buy</button>
+</div>

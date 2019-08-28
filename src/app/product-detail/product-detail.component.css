@@ -1,0 +1,27 @@
+.details-card {
+  display: flex;
+  justify-content: space-between;
+}
+.details-card-wrapper {
+  padding: 30px;
+  width: 550px;
+  margin: 80px auto;
+  border: solid 1px transparent;
+  border-radius: 5px;
+  background-color: #236;
+  color: #e53;
+}
+.details-image {
+  width: 150px;
+  height: 100px;
+  border-radius: 5px;
+}
+.detail-card-buy {
+  padding: 10px;
+  margin: 40px 0 0 0;
+  border-radius: 5px;
+  border: solid 1px transparent;
+  background-color: #567;
+  color: white;
+  cursor: pointer;
+}

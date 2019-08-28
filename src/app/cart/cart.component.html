@@ -1,0 +1,8 @@
+<div class="cart-card-wrapper" *ngFor="let item of items">
+  <div class="cart-card-info">
+    <h2>{{ item.name }}</h2>
+    <h3>Price: {{ item.price | currency }}</h3>
+    <h3 *ngIf="item.description">Description: {{ item.description }}</h3>
+  </div>
+  <img class="cart-card-image" src="{{ item.image }}" />
+</div>

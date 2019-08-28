@@ -1,0 +1,9 @@
+.card-button {
+  padding: 10px;
+  margin: 15px 10px;
+  border-radius: 5px;
+  border: solid 1px transparent;
+  background-color: #567;
+  color: white;
+  cursor: pointer;
+}

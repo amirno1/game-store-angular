@@ -1,0 +1,26 @@
+.card-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+.card {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background-color: #772135;
+  min-width: 200px;
+  padding: 10px;
+  color: white;
+}
+.card-link {
+  text-decoration: none;
+  color: white;
+}
+.card-button {
+  padding: 10px;
+  margin: 40px 0 0 0;
+  border-radius: 5px;
+  border: solid 1px transparent;
+  background-color: #567;
+  color: white;
+  cursor: pointer;
+}
