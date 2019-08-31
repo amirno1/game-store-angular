@@ -33,15 +33,6 @@ const products = [
     description: "Mamad kheili dosesh dare",
     image:
       "https://hb.imgix.net/ad3f96dfd21531e24ab72c3821a01049c8484982.jpg?auto=compress,format&fit=crop&h=353&w=616&s=9fc123b4c723d329d164b8ab02af5284"
-  },
-  {
-    id: 5,
-    name: "GTA",
-    genre: "Shooting",
-    price: 35,
-    description: "Mamad kheili dosesh dare",
-    image:
-      "https://hb.imgix.net/ad3f96dfd21531e24ab72c3821a01049c8484982.jpg?auto=compress,format&fit=crop&h=353&w=616&s=9fc123b4c723d329d164b8ab02af5284"
   }
 ];
 

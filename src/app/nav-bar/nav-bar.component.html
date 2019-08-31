@@ -1,4 +1,5 @@
 <div class="nav-bar">
-  <h1>Amir Game Store</h1>
-  <a [routerLink]="['/cart']" class="cart">Cart:</a>
+  <h1 (click)="ngOnInit()"><a [routerLink]="['/']">Amir Game Store</a></h1>
+  <!-- <div *ngIf="productAmount; then amountChange()"></div> -->
+  <a [routerLink]="['/cart']" class="cart">Cart: {{ productAmount }}</a>
 </div>

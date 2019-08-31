@@ -7,7 +7,7 @@
   border: 1px solid transparent;
   border-radius: 5px;
   background-color: #772135;
-  min-width: 200px;
+  min-width: 250px;
   padding: 10px;
   color: white;
 }
@@ -20,7 +20,7 @@
   margin: 40px 0 0 0;
   border-radius: 5px;
   border: solid 1px transparent;
-  background-color: #567;
+  background-color: #190;
   color: white;
   cursor: pointer;
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-// import { ProductService } from "../product.service";
+import { ProductService } from "../product.service";
 
 @Component({
   selector: "app-nav-bar",
@@ -7,13 +7,8 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./nav-bar.component.css"]
 })
 export class NavBarComponent implements OnInit {
-  // productAmount = 0;
-  constructor() // private productService: ProductService
-  {}
+  constructor(private productService: ProductService) {}
+  productAmount = this.productService.items.length;
 
-  ngOnInit() {
-    // this.productAmount = this.productService.showAmount();
-    // this.productAmount = this.productService.productAmount;
-    // console.log(this.productAmount);
-  }
+  ngOnInit() {}
 }
