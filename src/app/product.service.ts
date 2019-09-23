@@ -20,11 +20,7 @@ export class ProductService {
     item.itemAmount++;
   }
   onDecrease(item) {
-    if (item.itemAmount <= 1) {
-      this.onRemove(item);
-    } else {
-      item.itemAmount--;
-    }
+    item.itemAmount <= 1 ? this.onRemove(item) : item.itemAmount--;
   }
   onClear() {
     this.items = [];

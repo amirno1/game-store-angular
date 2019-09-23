@@ -10,6 +10,11 @@ import { AlertComponent } from "./alert/alert.component";
 import { RouterModule } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
 import { ShippingComponent } from "./shipping/shipping.component";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatButtonModule } from "@angular/material/button";
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import { CheckOutComponent } from "./check-out/check-out.component";
 
 @NgModule({
   declarations: [
@@ -19,17 +24,24 @@ import { ShippingComponent } from "./shipping/shipping.component";
     CartComponent,
     ProductDetailComponent,
     AlertComponent,
-    ShippingComponent
+    ShippingComponent,
+    CheckOutComponent
   ],
   imports: [
     BrowserModule,
+    MatButtonModule,
+    MatCheckboxModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     RouterModule.forRoot([
       { path: "", component: ProductListComponent },
       { path: "product-details/:id", component: ProductDetailComponent },
       { path: "cart", component: CartComponent },
-      { path: "shipping", component: ShippingComponent }
+      { path: "shipping", component: ShippingComponent },
+      { path: "check-out", component: CheckOutComponent }
     ])
   ],
   providers: [],

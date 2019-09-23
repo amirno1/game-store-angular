@@ -1,0 +1,31 @@
+.form-wrapper {
+  width: 960px;
+  margin: 200px auto;
+  text-align: center;
+}
+.button {
+  padding: 10px;
+  margin: 15px 10px 15px 0;
+  font-size: 15px;
+  border-radius: 5px;
+  border: solid 1px transparent;
+  background-color: #223242;
+  width: 100px;
+  color: white;
+  cursor: pointer;
+}
+.form-field {
+  margin: 20px 0;
+}
+.form-field__title {
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.form-field__input {
+  width: 200px;
+  padding: 5px;
+  height: 30px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 18px;
+}

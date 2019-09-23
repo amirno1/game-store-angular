@@ -1,23 +1,38 @@
-<div *ngIf="items.length > 0" class="cart-card-remove" (click)="clear()">
-  Remove All
-</div>
-<div class="cart-card-wrapper" *ngFor="let item of items">
-  <div class="cart-card-info">
-    <h2>{{ item.name }}</h2>
-    <h3>Price: {{ item.price | currency }}</h3>
-    <h3 *ngIf="item.description">Description: {{ item.description }}</h3>
-    <div class="cart-card-amount-info">
-      <span (click)="decrease(item)" class="amount-changer"> <</span>
-      <span class="cart-card-amount" *ngIf="item.itemAmount">
-        {{ item.itemAmount }}
-      </span>
-      <span (click)="increase(item)" class="amount-changer"> > </span>
+<div class="cart-wrapper">
+  <div class="cart-card-wrapper" *ngFor="let item of items">
+    <div class="cart-card-info">
+      <h2>{{ item.name }}</h2>
+      <h3>Price: {{ item.price | currency }}</h3>
+      <h3 *ngIf="item.description">Description: {{ item.description }}</h3>
+      <div class="cart-card-amount-info">
+        <span (click)="decrease(item)" class="amount-changer"> <</span>
+        <span class="cart-card-amount" *ngIf="item.itemAmount">
+          {{ item.itemAmount }}
+        </span>
+        <span (click)="increase(item)" class="amount-changer"> > </span>
+      </div>
+      <div>
+        <button class="cart-card remove" (click)="remove(item)">
+          Remove
+        </button>
+      </div>
     </div>
-    <div>
-      <button class="cart-card-remove" (click)="remove(item)">
-        Remove
-      </button>
+    <img class="cart-card-image" src="{{ item.image }}" />
+  </div>
+  <div>
+    <div
+      *ngIf="items.length > 0"
+      class="cart-card remove-all"
+      (click)="clear()"
+    >
+      Remove All
+    </div>
+    <div
+      *ngIf="items.length > 0"
+      [routerLink]="['/check-out']"
+      class="cart-card check-out"
+    >
+      Check Out and Pay
     </div>
   </div>
-  <img class="cart-card-image" src="{{ item.image }}" />
 </div>

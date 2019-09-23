@@ -1,14 +1,20 @@
 <div class="card-wrapper">
-  <div class="card" *ngFor="let product of products">
-    <h3>
-      <a class="card-link" [routerLink]="['/product-details', product.id]">{{
-        product.name
-      }}</a>
-    </h3>
+  <div
+    class="card"
+    [routerLink]="['/product-details', product.id]"
+    *ngFor="let product of products"
+  >
+    <h3 class="card-link">{{ product.name }}</h3>
     <p>Price: {{ product.price }}</p>
-    <button (click)="notify()" class="card-button" *ngIf="product.price > 35">
-      Notify
-    </button>
-    <app-alert [product]="product" (notify)="onNotify()"></app-alert>
+    <div class="card-buttons">
+      <button
+        (click)="notify()"
+        class="card-button__notify"
+        *ngIf="product.price > 35"
+      >
+        Notify
+      </button>
+      <app-alert [product]="product" (notify)="onNotify()"></app-alert>
+    </div>
   </div>
 </div>
