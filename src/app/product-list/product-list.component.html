@@ -2,7 +2,7 @@
   <div
     class="card"
     [routerLink]="['/product-details', product.id]"
-    *ngFor="let product of products"
+    *ngFor="let product of products$ | async"
   >
     <h3 class="card-link">{{ product.name }}</h3>
     <p>Price: {{ product.price }}</p>

@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { ProductService } from "../product.service";
-import products from "../products";
+import { AngularFireDatabase } from "@angular/fire/database";
+import { Observable } from "rxjs";
+import { map } from "rxjs/operators";
 
 @Component({
   selector: "app-product-detail",
@@ -9,10 +11,14 @@ import products from "../products";
   styleUrls: ["./product-detail.component.css"]
 })
 export class ProductDetailComponent implements OnInit {
+  products$: Observable<any[]>;
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductService
-  ) {}
+    private productService: ProductService,
+    db: AngularFireDatabase
+  ) {
+    this.products$ = db.list("products").valueChanges();
+  }
   product;
 
   buy(product) {
@@ -20,11 +26,16 @@ export class ProductDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.route.paramMap.subscribe(param => {
-      let productId = param.get("id");
-      this.product = products.find(
-        product => product.id === parseInt(productId)
-      );
-    });
+    this.products$
+      .pipe(
+        map(product =>
+          product.filter(item => {
+            if (item.id === Number(this.route.snapshot.params.id)) {
+              this.product = item;
+            }
+          })
+        )
+      )
+      .subscribe();
   }
 }

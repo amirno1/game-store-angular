@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyCTkkEyk91LwQHYvOL72fq9SpLX6F9Hd0w",
+    authDomain: "amir-game-store.firebaseapp.com",
+    databaseURL: "https://amir-game-store.firebaseio.com",
+    projectId: "amir-game-store",
+    storageBucket: "amir-game-store.appspot.com",
+    messagingSenderId: "291632812485",
+    appId: "1:291632812485:web:7e295823c71407e31f3bac"
+  }
 };
 
 /*

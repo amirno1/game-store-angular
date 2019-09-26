@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import products from "../products";
+import { AngularFireDatabase } from "@angular/fire/database";
+import { Observable } from "rxjs";
 
 @Component({
   selector: "app-product-list",
@@ -7,8 +8,11 @@ import products from "../products";
   styleUrls: ["./product-list.component.css"]
 })
 export class ProductListComponent implements OnInit {
-  products = products;
-  constructor() {}
+  products$: Observable<any[]>;
+
+  constructor(db: AngularFireDatabase) {
+    this.products$ = db.list("products").valueChanges();
+  }
   notify() {
     window.alert("notified");
   }
